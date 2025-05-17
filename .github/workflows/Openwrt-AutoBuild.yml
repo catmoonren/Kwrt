@@ -258,7 +258,15 @@ jobs:
         make defconfig
         fi
         cat .config
+        
+    # === 这里插入你的 config 检查/输出步骤 ===
+    - name: Show .config file (debug)
+      run: |
+        echo "======= .config start ======="
+        cat .config || echo "No .config found."
+        echo "======= .config end ======="
 
+        
     - name: Cache
       uses: stupidloud/cachewrtbuild@main
       with:
