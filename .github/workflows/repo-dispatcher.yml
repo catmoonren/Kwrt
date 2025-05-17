@@ -59,23 +59,7 @@ jobs:
         -H "Authorization: token ${{ secrets.TOKEN_KIDDIN9 }}" \
         --data '{"event_type": "update"}'
         fi
-    # === 这里插入你的 config 检查/输出步骤 ===
-    - name: Show .config file (debug)
-      run: |
-        echo "======= .config start ======="
-        cat .config || echo "No .config found."
-        echo "======= .config end ======="
 
-    - name: Show config.buildinfo file (debug)
-      run: |
-        if [ -f config.buildinfo ]; then
-          echo "======= config.buildinfo start ======="
-          cat config.buildinfo
-          echo "======= config.buildinfo end ======="
-        else
-          echo "No config.buildinfo found."
-        fi
-        
     - name: Trigger Compile
       run: |
         sudo timedatectl set-timezone "$TZ"
