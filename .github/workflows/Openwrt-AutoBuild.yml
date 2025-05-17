@@ -244,8 +244,8 @@ jobs:
         CONFIG_CRYPTO_CHACHA20POLY1305=y \
         CONFIG_FAT_DEFAULT_IOCHARSET="utf8" \
         ' `find target/linux -path "target/linux/*/config-*"`
-        echo "==== filogic.mk after patch ===="
-        grep 'cmcc_rax3000m-emmc' openwrt/target/linux/mediatek/image/filogic.mk
+        echo "******* filogic.mk after patch *******"
+        grep 'cmcc_rax3000m-emmc' target/linux/mediatek/image/filogic.mk
     - name: Defconfig
       run: |
         cd openwrt
